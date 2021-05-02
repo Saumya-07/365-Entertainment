@@ -1,3 +1,4 @@
+// slideshow 
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -23,6 +24,7 @@ slides[slideIndex-1].style.display = "block";
 
 }
 
+// search box filter
 const search = () => {
     let filter = document.getElementById('input').value.toLowerCase();
 
@@ -46,23 +48,34 @@ const search = () => {
         }
     }
 }
-const filterGenre = () => {
-    const genreList=[
-    "All",
-    "Action",
-    "Drama",
-    "Sci-Fi"
-    ];
-    const dropdown = document.getElementById('genre');
-    const list = dropdown.getElementsByTagName('a');
 
-    console.log(list);
-    
-    for(var j=0;j < list.length ; j++){
-        const genre = list[j].textContent;
-        console.log(genre);
-    }
+// filter according to genre
+const genre=document.getElementsByClassName('genre');
+const movieList = document.getElementsByClassName('box');
+const dropdownBtn= document.getElementById('genre-name');
+
+for(var i=0;i<genre.length;i++){
+    genre[i].addEventListener('click',(e)=>{
+        e.preventDefault();
+        
+        const filter= e.target.dataset.filter;
+        console.log(filter);
+
+        for(var movie=0;movie<movieList.length;movie++){
+            if(filter == 'all'){
+                movieList[movie].style.display="block"
+            }else{
+                if(movieList[movie].classList.contains(filter)){
+                    movieList[movie].style.display="block";
+                    dropdownBtn.textContent= filter;
+                }
+                else{
+                    movieList[movie].style.display="none";
+                }
+            }
+        }
+    })
 }
 
 
-
+// hamburger menubar
