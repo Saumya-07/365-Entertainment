@@ -6,14 +6,16 @@
     <title>Movies | 365 Entertainment</title>
     <link rel="icon" href="images/logo.jpg" type="image/png" sizes="16x20">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
-            <ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="navlinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="#">TV Series</a></li>
@@ -82,7 +84,7 @@
     <!-- search bar -->
     <div class="search">
         <form >
-            <input type="text" placeholder="Search your favouri sci-fite movie title" id='input' onkeyup="search()">
+            <input type="text" placeholder="Search your favourite movie title" id='input' onkeyup="search()">
             <button type="submit" class="searchbtn"><img src="images/search-solid.svg" alt=""></button>
         </form>
     
@@ -91,9 +93,9 @@
     </section>
 
 
-    <section>
+    <section >
         
-    <div class="images" id='block'>
+    <div class="images " id='block'>
 
         <div class="box">
             <img src="images/13.jpg" alt="">

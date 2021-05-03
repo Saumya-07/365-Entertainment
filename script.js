@@ -79,3 +79,9 @@ for(var i=0;i<genre.length;i++){
 
 
 // hamburger menubar
+const hamburger= document.getElementById('hamburger');
+const navLinks= document.getElementById('navlinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+})
